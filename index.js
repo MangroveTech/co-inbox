@@ -74,6 +74,18 @@ module.exports = {
     return yield removeFlags.call(this, uid, flags);
   },
 
+  storeMessage: function* (message, flags) {
+    return yield storeMessage.call(this, message, flags);
+  },
+
+  copyMessage: function* (uid, destination) {
+    return yield copyMessage.call(this, uid, destination);
+  },
+
+  moveMessage: function* (uid, destination) {
+    return yield moveMessage.call(this, uid, destination);
+  },
+
   close: function() {
     this.client.close();
   }
@@ -170,3 +182,26 @@ function removeFlags(uid, flags) {
     self.client.removeFlags(uid, flags, callback);
   };
 }
+
+function storeMessage(message, flags) {
+  var self = this;
+  return function(callback) {
+    self.client.storeMessage(message, flags, callback);
+  };
+}
+
+function copyMessage(uid, destination) {
+  var self = this;
+  return function(callback) {
+    self.client.copyMessage(uid, destination, callback);
+  };
+}
+
+function moveMessage(uid, destination) {
+  var self = this;
+  return function(callback) {
+    self.client.moveMessage(uid, destination, callback);
+  }
+}
+
+
