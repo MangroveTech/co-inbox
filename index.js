@@ -58,6 +58,22 @@ module.exports = {
     return yield listFlags.call(this, from, limit);
   },
 
+  search: function* (query, isUID) {
+    return yield search.call(this, query, isUID);
+  },
+
+  fetchFlags: function* (uid) {
+    return yield fetchFlags.call(this, uid);
+  },
+
+  addFlags: function* (uid, flags) {
+    return yield addFlags.call(this, uid, flags);
+  },
+
+  removeFlags: function* (uid, flags) {
+    return yield removeFlags.call(this, uid, flags);
+  },
+
   close: function() {
     this.client.close();
   }
@@ -124,5 +140,33 @@ function listFlags(from, limit) {
   var self = this;
   return function(callback) {
     self.client.listFlags(from, limit, callback);
+  };
+}
+
+function search(query, isUID) {
+  var self = this;
+  return function(callback) {
+    self.client.search(query, isUID, callback);
+  };
+}
+
+function fetchFlags(uid) {
+  var self = this;
+  return function(callback) {
+    self.client.fetchFlags(uid, callback);
+  };
+}
+
+function addFlags(uid, flags) {
+  var self = this;
+  return function(callback) {
+    self.client.addFlags(uid, flags, callback);
+  };
+}
+
+function removeFlags(uid, flags) {
+  var self = this;
+  return function(callback) {
+    self.client.removeFlags(uid, flags, callback);
   };
 }
