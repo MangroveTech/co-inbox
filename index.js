@@ -86,6 +86,10 @@ module.exports = {
     return yield moveMessage.call(this, uid, destination);
   },
 
+  deleteMessage: function* (uid) {
+    return yield deleteMessage.call(this, uid);
+  },
+
   close: function() {
     this.client.close();
   }
@@ -201,7 +205,12 @@ function moveMessage(uid, destination) {
   var self = this;
   return function(callback) {
     self.client.moveMessage(uid, destination, callback);
-  }
+  };
 }
 
-
+function deleteMessage(uid) {
+  var self = this;
+  return function(callback) {
+    self.client.deleteMessage(uid, callback);
+  };
+}

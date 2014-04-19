@@ -29,19 +29,35 @@ NB: for more infomation on API, you could visit [andris9/inbox](https://github.c
 
 ### Supported API
 
-* createConnection
+* createConnection(port, host, option)
 
-* listMailboxes
+* listMailboxes()
 
-* getMailbox
+* getMailbox(path)
 
-* openMailbox
+* openMailbox(path)
 
-* listMessages
+* listMessages(from, limit)
 
-* listMessagesByUID
+* listMessagesByUID(first, last)
 
-* listFlags
+* listFlags(from, limit)
+
+* search(query, isUID)
+
+* fetchFlags(uid)
+
+* addFlags(uid, flags)
+
+* removeFlags(uid, flags)
+
+* storeMessage(message, flags)
+
+* copyMessage(uid, destination)
+
+* moveMessage(uid, destination)
+
+* deleteMessage(uid)
 
 ### License
 MIT
