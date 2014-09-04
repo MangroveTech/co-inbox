@@ -1,10 +1,9 @@
 
 co-inbox
-[![NPM version][npm-image]][npm-url]
-[![Build status][travis-image]][travis-url] 
-[![Test coverage][coveralls-image]][coveralls-url]
-[![Gittip][gittip-image]][gittip-url]
 ================
+
+[![Build Status](https://travis-ci.org/MangroveTech/co-inbox.svg?branch=master)](https://travis-ci.org/MangroveTech/co-inbox)
+
 Better inbox api based on [visionmedia/co](https://github.com/visionmedia/co) and [andris9/inbox](https://github.com/andris9/inbox)
 
 [![NPM](https://nodei.co/npm/co-inbox.png?stars&downloads)](https://nodei.co/npm/co-inbox/)
