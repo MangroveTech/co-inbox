@@ -1,6 +1,6 @@
 {
   "name": "co-inbox",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Better inbox api based on [visionmedia/co](https://github.com/visionmedia/co) and [andris9/inbox](https://github.com/andris9/inbox)",
   "main": "index.js",
   "directories": {
