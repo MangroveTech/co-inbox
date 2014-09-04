@@ -3,6 +3,9 @@ co-inbox
 ================
 Better inbox api based on [visionmedia/co](https://github.com/visionmedia/co) and [andris9/inbox](https://github.com/andris9/inbox)
 
+[![NPM](https://nodei.co/npm/co-inbox.png?stars&downloads)](https://nodei.co/npm/co-inbox/)
+[![NPM](https://nodei.co/npm-dl/co-inbox.png)](https://nodei.co/npm/co-inbox/)
+
 ### Installation
 ```sh
 $ npm install co-inbox
