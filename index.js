@@ -96,7 +96,8 @@ module.exports = {
 
 };
 
-function createConnection() {
+function createConnection(port, host, option) {
+  'use strict'
   var self = this;
   var args = arguments;
   return function(callback) {
