@@ -13,6 +13,5 @@ Runnable.prototype.run = function (fn) {
     this.fn   = co(this.fn);
     this.sync = !(this.async = true);
   }
-
   return run.call(this, fn);
 };
