@@ -16,8 +16,8 @@ $ npm install co-inbox
 
 ### Usage
 ```js
-var inbox = Object.create(Inboxes);
-var client = yield inbox.createConnection(false, 'imap.gmail.com', {
+const inbox = Object.create(Inboxes);
+const client = yield inbox.createConnection(false, 'imap.gmail.com', {
   secureConnection: true,
   auth: {
     user: 'yorkiefixer@gmail.com',
@@ -26,9 +26,14 @@ var client = yield inbox.createConnection(false, 'imap.gmail.com', {
   debug: true
 });
 
-var mailboxes = yield inbox.listMailboxes();
+const mailboxes = yield inbox.listMailboxes();
 console.log(mailboxes);
 
+// use unsupported function from upstream
+inbox.client.createMessageStream(32)
+  .pipe(process.stdout, {end: false});
+
+// close
 inbox.close();
 ```
 NB: for more infomation on API, you could visit [andris9/inbox](https://github.com/andris9/inbox)
@@ -50,6 +55,8 @@ NB: for more infomation on API, you could visit [andris9/inbox](https://github.c
 * listFlags(from, limit)
 
 * search(query, isUID)
+
+* fetchData(uid)
 
 * fetchFlags(uid)
 

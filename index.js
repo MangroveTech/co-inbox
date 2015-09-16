@@ -62,6 +62,10 @@ module.exports = {
     return yield search.call(this, query, isUID);
   },
 
+  fetchData: function* (uid) {
+    return yield fetchData.call(this, uid);
+  },
+
   fetchFlags: function* (uid) {
     return yield fetchFlags.call(this, uid);
   },
@@ -164,6 +168,13 @@ function search(query, isUID) {
   var self = this;
   return function(callback) {
     self.client.search(query, isUID, callback);
+  };
+}
+
+function fetchData(uid) {
+  var self = this;
+  return function(callback) {
+    self.client.fetchData(uid, callback);
   };
 }
 
