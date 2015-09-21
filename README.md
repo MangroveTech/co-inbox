@@ -50,6 +50,8 @@ NB: for more infomation on API, you could visit [andris9/inbox](https://github.c
 
 * listMessages(from, limit)
 
+* listChildren(path, all)
+
 * listMessagesByUID(first, last)
 
 * listFlags(from, limit)
