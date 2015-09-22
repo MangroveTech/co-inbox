@@ -150,7 +150,7 @@ function openMailbox(path, option) {
 function listChildren(path, all) {
   var self = this;
   return function(callback) {
-    self.client.listChildren(path, all, callback);
+    self.client.listMailboxes(path, all, callback);
   };
 }
 
