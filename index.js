@@ -46,6 +46,10 @@ module.exports = {
     return yield openMailbox.call(this, path, option);
   },
 
+  listChildren: function* (path, all) {
+    return yield listChildren.call(this, path, all);
+  },
+
   listMessages: function* (from, limit) {
     return yield listMessages.call(this, from, limit);
   },
@@ -140,6 +144,13 @@ function openMailbox(path, option) {
   var self = this;
   return function(callback) {
     self.client.openMailbox(path, option, callback);
+  };
+}
+
+function listChildren(path, all) {
+  var self = this;
+  return function(callback) {
+    self.client.listMailboxes(path, all, callback);
   };
 }
 
